@@ -1,58 +1,36 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Калькулятор</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="calculator">
-        <h2>Калькулятор</h2>
+    <div class="container">
         <input type="text" id="display" readonly>
-
-        <div class="buttons">
-            <button onclick="press('7')">7</button>
-            <button onclick="press('8')">8</button>
-            <button onclick="press('9')">9</button>
-            <button class="op" onclick="press('/')">÷</button>
-
-            <button onclick="press('4')">4</button>
-            <button onclick="press('5')">5</button>
-            <button onclick="press('6')">6</button>
-            <button class="op" onclick="press('*')">×</button>
-
-            <button onclick="press('1')">1</button>
-            <button onclick="press('2')">2</button>
-            <button onclick="press('3')">3</button>
-            <button class="op" onclick="press('-')">−</button>
-
-            <button onclick="press('0')">0</button>
-            <button onclick="press('.')">.</button>
-            <button class="clear" onclick="clearDisplay()">C</button>
-            <button class="op" onclick="press('+')">+</button>
-
-            <button class="equal" onclick="calculate()">=</button>
+        <div class="box">
+            <button class="options" onclick="erace()">AC</button>
+            <button class="options" onclick="change()">+/-</button>
+            <button class="options" onclick="press('%')">%</button>
+            <button class="operation" onclick="press('/')">/</button>
+            <button class="number" onclick="press('7')">7</button>
+            <button class="number" onclick="press('8')">8</button>
+            <button class="number" onclick="press('9')">9</button>
+            <button class="operation" onclick="press('*')">*</button>
+            <button class="number" onclick="press('4')">4</button>
+            <button class="number" onclick="press('5')">5</button>
+            <button class="number" onclick="press('6')">6</button>
+            <button class="operation" onclick="press('-')">-</button>
+            <button class="number" onclick="press('1')">1</button>
+            <button class="number" onclick="press('2')">2</button>
+            <button class="number" onclick="press('3')">3</button>
+            <button class="operation" onclick="press('+')">+</button>
+            <button class="number" id="point" onclick="press('.')">/</button>
+            <button class="number" onclick="press('0')">0</button>
+            <button class="number" onclick="cancel()">C</button>
+            <button class="operation" onclick="calculate()">=</button>
         </div>
-    </div>
-
-    <script>
-        const display = document.getElementById('display');
-
-        function press(value) {
-            display.value += value;
-        }
-
-        function clearDisplay() {
-            display.value = '';
-        }
-
-        function calculate() {
-            try {
-                display.value = eval(display.value);
-            } catch {
-                display.value = "Error";
-            }
-        }
-    </script>
+    </div>   
 </body>
 </html>

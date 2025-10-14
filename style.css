@@ -69,3 +69,24 @@ button:active {
 .operation {
     background-color: cadetblue;
 }
+@media (max-width: 700px) {
+    .container {
+        width: 90vw;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    input {
+        font-size: 40px;
+    }
+
+    button {
+        font-size: 24px;
+        padding: 20px 5px;
+        border-radius: 20px;
+    }
+
+    .box {
+        gap: 10px;
+    }
+}

@@ -31,6 +31,42 @@
             <button class="number" onclick="cancel()">C</button>
             <button class="operation" onclick="calculate()">=</button>
         </div>
-    </div>   
+    </div>
+    <script>
+        let display = document.getElementById('display');
+        let current = '';
+
+        function press(num){
+            current += num;
+            display.value = current;
+        }
+
+        function calculate() {
+            try {
+                let result = eval(current);
+                if (result === Infinity || result === -Infinity || isNaN(result)) {
+                    display.value = 'Error';
+                    current = '';
+                } else {
+                    display.value = result;
+                    current = result.toString();
+                }
+            } catch {
+                display.value = 'Error';
+                current = '';
+            }
+        }
+
+
+        function erace() {
+            display.value = '';
+            current = '';
+        }
+
+        function cancel() {
+            current = current.slice(0, -1);
+            display.value = current;
+        }
+    </script>   
 </body>
 </html>
